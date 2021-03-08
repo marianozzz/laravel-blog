@@ -16,7 +16,6 @@
     <div class="card-body">
         {!! Form::model($post,['route' => ['admin.posts.update', $post],'autocomplete' => 'off','files' => true, 'method' => 'put']) !!}
 
-
         @include('admin.posts.partials.form')
 
         {!! Form::submit('Actualiza Post', ['class' => 'btn btn-primary']) !!}

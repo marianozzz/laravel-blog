@@ -9,7 +9,6 @@ use App\Models\Category;
 use App\Models\Tag;
 
 use Illuminate\Support\Facades\Storage;
-
 use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
@@ -83,9 +82,14 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-       $categories = Category::pluck('name', 'id');
-        $tags = Tag::all();
+
+        $this->authorize('author', $post);
+        
+        $categories = Category::pluck('name', 'id');
+         $tags = Tag::all();
         return view('admin.posts.edit',compact('post','categories','tags'));
+
+     // return $post;
         
     }
 
@@ -98,6 +102,8 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+        $this->authorize('author', $post);
+        
         $post->update($request->all());
 
         if($request->file('file'))
@@ -136,8 +142,10 @@ class PostController extends Controller
      * @param  int  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy($post)
+    public function destroy(Post $post)
     {
-        //
+        $this->authorize('author', $post);
+        $post->delete();
+        return redirect()->route('admin.posts.index')->with('info','El Post se elimino con exito');
     }
 }
