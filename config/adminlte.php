@@ -240,6 +240,12 @@ return [
             'icon'  => 'fas fa-tachometer-alt fa-fw',
            
         ],
+        [
+            'text'  => 'USUARIOS',
+            'route' => 'admin.users.index',
+            'icon'  => 'fas fa-users fa-fw',
+           
+        ],
         ['header' => 'ADMINISTRADOR'],
         [
             'text' => 'Categoria',
@@ -258,13 +264,13 @@ return [
         [
             'text'  => 'Lista de Post',
             'route' => 'admin.posts.index',
-            'icon ' => 'fas fa-fw fa-clipboard',
+            'icon' => 'fas fa-fw fa-clipboard',
             
         ],
         [
             'text'  => 'Crear nuevo Post',
             'route' => 'admin.posts.create',
-            'icon ' => 'fas fa-fw fa-file',
+            'icon' => 'fas fa-fw fa-file',
         ],
       
     ],
