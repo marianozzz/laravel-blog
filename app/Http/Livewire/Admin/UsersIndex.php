@@ -12,6 +12,11 @@ class UsersIndex extends Component
 
     protected $paginationTheme = 'bootstrap';
     public $search;
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
     public function render()
     {
         $users = User::where('name','LIKE','%'. $this->search .'%')
