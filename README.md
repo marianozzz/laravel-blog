@@ -34,7 +34,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 -Run composer intall
 
--php artisan make:storage link
+-php artisan storage:link
 
 -php artisan migrate --seed
 
