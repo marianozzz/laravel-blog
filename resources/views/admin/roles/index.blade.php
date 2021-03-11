@@ -11,6 +11,12 @@
 
 @section('content')
 
+@if (session('info'))
+<div class="alert alert-success">
+    {{session('info')}}
+</div>  
+@endif
+
 <div class="card">
     <table class="table table-striped">
         <thead>

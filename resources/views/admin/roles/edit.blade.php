@@ -7,16 +7,12 @@
 @stop
 
 @section('content')
-
-<div class="card">
     @if (session('info'))
-
-    <div class="alert alert-success">
-        {{session('info')}}
-    </div>
-        
+        <div class="alert alert-success">
+            {{session('info')}}
+        </div>  
     @endif
-
+<div class="card">
     <div class="card-body">
        {!! Form::model($role, ['route' =>['admin.roles.update', $role], 'method' => 'put']) !!} 
         

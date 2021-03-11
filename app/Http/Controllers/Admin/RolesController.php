@@ -102,6 +102,7 @@ class RolesController extends Controller
      */
     public function destroy(Role $role)
     {
-        //
+        $role->delete();
+        return redirect()->route('admin.roles.index')->with('info','El rol se elimino con exito');
     }
 }
