@@ -32,7 +32,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 -Run npm install.
 
--Run composer intall
+-Run composer install
 
 -php artisan storage:link
 
